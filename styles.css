@@ -66,7 +66,7 @@ textarea:not([rows]) {
   --ff-primary: "Red Hat Display", sans-serif;
 
   /* Colors */
-  --cyan-1: #4d96a9;
+  --cyan-1: rgb(77, 150, 169);
   --cyan-2: #8fe3f9;
   --purple-1: #855fb1;
   --purple-2: #d9b8ff;
@@ -118,6 +118,10 @@ textarea:not([rows]) {
 
 .cyan-2 {
   color: var(--cyan-2);
+}
+
+.purple-2 {
+  color: var(--purple-2);
 }
 
 /* Background Colors */
@@ -207,7 +211,8 @@ header {
 }
 
 .hero-content button,
-.hero-content a {
+.hero-content a,
+footer button {
   height: 3.5rem;
   padding-inline: 2.5rem;
   border: none;
@@ -221,12 +226,143 @@ header {
 
 .hero-img-left {
   position: absolute;
-  left: calc(-25rem + 25vw);
+  left: calc(-30rem + 30vw);
   top: 4rem;
 }
 
 .hero-img-right {
   position: absolute;
-  right: calc(-25rem + 25vw);
+  right: calc(-30rem + 30vw);
   bottom: 4rem;
+}
+
+/* Meet */
+.meet {
+  padding: 3.5rem 10vw 11.25rem;
+}
+
+.meet-content {
+  padding-top: 12.5rem;
+  position: relative;
+}
+
+.meet-content::after {
+  content: "01";
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--slate-3);
+  border-radius: 50%;
+  color: var(--slate-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.meet-content::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 5rem;
+  background-color: var(--slate-3);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  top: 0;
+}
+
+.meet-images {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.meet-images img {
+  width: calc(25% - (6rem / 4));
+  border-radius: 0.5rem;
+}
+
+.meet-details {
+  text-align: center;
+}
+
+.meet-details h2 {
+  text-transform: uppercase;
+}
+
+.meet-details h3 {
+  margin: 1rem auto 2rem;
+  width: 30rem;
+}
+
+.meet-details p {
+  width: 35rem;
+  margin-inline: auto;
+}
+
+/* Footer */
+footer {
+  background: url(./images/desktop/image-footer.jpg) no-repeat center center /
+    cover;
+  padding: 7rem 10vw;
+  position: relative;
+  z-index: -1;
+}
+
+footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(77, 150, 169, 0.8);
+  z-index: -1;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-content::after {
+  content: "02";
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--slate-3);
+  border-radius: 50%;
+  color: var(--slate-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  background-color: var(--white);
+}
+
+.footer-content::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 5rem;
+  background-color: var(--slate-3);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  top: -6.75rem;
+}
+
+.footer-content h2 {
+  min-width: 21rem;
+  max-width: 21rem;
+}
+
+.footer-content p {
+  max-width: 21rem;
 }
