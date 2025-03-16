@@ -212,7 +212,7 @@ header {
 
 .hero-content button,
 .hero-content a,
-footer button {
+.footer-content button {
   height: 3.5rem;
   padding-inline: 2.5rem;
   border: none;
@@ -222,6 +222,7 @@ footer button {
   align-items: center;
   gap: 0.25rem;
   text-decoration: none;
+  transition: background-color 0.25s;
 }
 
 .hero-img-left {
@@ -276,13 +277,13 @@ footer button {
 }
 
 .meet-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
 .meet-images img {
-  width: calc(25% - (6rem / 4));
   border-radius: 0.5rem;
 }
 
@@ -296,7 +297,7 @@ footer button {
 
 .meet-details h3 {
   margin: 1rem auto 2rem;
-  width: 30rem;
+  width: 29rem;
 }
 
 .meet-details p {
@@ -310,7 +311,7 @@ footer {
     cover;
   padding: 7rem 10vw;
   position: relative;
-  z-index: -1;
+  z-index: 10;
 }
 
 footer::after {
@@ -319,6 +320,7 @@ footer::after {
   inset: 0;
   background: rgba(77, 150, 169, 0.8);
   z-index: -1;
+  pointer-events: none;
 }
 
 .footer-content {
@@ -365,4 +367,149 @@ footer::after {
 
 .footer-content p {
   max-width: 21rem;
+}
+
+/* Hover States */
+.hero-content button:hover {
+  background-color: #71c0d4;
+}
+
+.hero-content a:hover,
+.footer-content button:hover {
+  background-color: #b18bdd;
+}
+
+/* Media Query */
+@media screen and (max-width: 58.5rem) {
+  /* Text Presets */
+  .tp-1 {
+    font-size: 3rem;
+  }
+
+  .tp-2 {
+    font-size: 2.25rem;
+  }
+
+  .tp-3 {
+    font-size: 0.875;
+  }
+
+  .tp-4 {
+    font-size: 1rem;
+  }
+
+  /* Header */
+  header {
+    padding-top: 3rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: calc(5rem + 40vw);
+  }
+
+  .hero-content p {
+    padding-block: 1.5rem;
+  }
+
+  .hero-img-left {
+    left: -3%;
+    width: 51.5%;
+    top: 4rem;
+  }
+
+  .hero-img-right {
+    right: -3%;
+    width: 51.5%;
+    top: 4rem;
+  }
+
+  /* Meet */
+  .meet {
+    padding-bottom: 10.75rem;
+  }
+
+  .meet-images {
+    gap: 1.5rem;
+  }
+
+  .meet-details p {
+    width: 80%;
+  }
+
+  .meet-details h3 {
+    width: 72%;
+  }
+
+  /* Footer */
+  footer {
+    padding-block: 4rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-content h2 {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .footer-content p {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 35.5rem) {
+  /* Text Presets */
+  .tp-1 {
+    font-size: 2.5rem;
+  }
+
+  .tp-2 {
+    font-size: 2rem;
+  }
+
+  .tp-3 {
+    font-size: 0.75rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-bottom: 0;
+  }
+
+  .hero-content {
+    padding-bottom: 2rem;
+  }
+
+  .hero-content p {
+    width: 100%;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Meet */
+  .meet {
+    padding-top: 2rem;
+  }
+
+  .meet-images {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .meet-details p {
+    width: 100%;
+  }
+
+  .meet-details h3 {
+    width: 100%;
+  }
 }
